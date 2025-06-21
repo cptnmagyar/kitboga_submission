@@ -1,52 +1,240 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Joel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Kiss Your Dog!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style type="text/css">
-    html,
-    body {
-      background: pink;
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&family=Kalnia+Glaze" rel="stylesheet">
 
-    #captcha-container {
-      background: white;
-      width: 390px;
-      height: 300px;
-    }
+    <style type="text/css">
+        html,
+        body {
+            background: pink;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
-    /* Your style here... */
-  </style>
+        * {
+            user-select: none;
+        }
+
+        #captcha-container {
+            width: 400px;
+            height: 300px;
+            background-image: url('dog_01.png');
+            background-size: 400px 300px;
+            overflow: hidden;
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+        }
+
+        #captcha-container-inner {
+            width: 100%;
+            padding: 8px;
+            margin: 8px;
+        }
+
+        #captcha-kiss-zone {
+            width: 50px;
+            height: 50px;
+            padding: 8px;
+            /* background color to display the kiss zone*/
+            /* background-color: rgba(0, 255, 255, 0.329); */
+        }
+
+        .custom-cursor-kiss-mark {
+            cursor:url('kiss_mark_small.png') 25 15, auto;
+        }
+
+        .custom-cursor-kiss-pucker {
+            cursor:url('kiss_pucker_small.png') 25 15, auto;
+        }
+
+        #title {
+            text-align: center;
+            font-size: 36px;
+            background: rgb(50 50 50 / 0.6);
+            font-family: "Honk", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
 </head>
-
 <body>
-  <div id="captcha-container">
-    <!-- Add your CAPTCHA here: -->
-    Hello world!
+<div id="captcha-container">
+    <div id="captcha-container-inner">
+        <div id="title">KISS YOUR DOG: 0/10</div>
+        <div id="captcha-kiss-zone" onclick="kissTheDog();"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    class KissableDog {
+    constructor(kissZoneXCoordinate, kissZoneYCoordinate, kissZoneWidth, kissZoneHeight, backgroundImage) {
+        this.kissZoneXCoordinate = kissZoneXCoordinate;
+        this.kissZoneYCoordinate = kissZoneYCoordinate;
+        this.kissZoneWidth = kissZoneWidth;
+        this.kissZoneHeight = kissZoneHeight;
+        this.backgroundImage = backgroundImage;
+    }
+    }
 
-    <!-- We've added a sample button. Feel free to remove it: -->
-    <button id="solve">
-      Solve!
-    </button>
-  </div>
+    const dog01 = new KissableDog("145px", "40px", "40px", "25px", "url(dog_01.png)");
+    const dog02 = new KissableDog("215px", "45px", "30px", "10px", "url(dog_02.png)");
+    const dog03 = new KissableDog("70px", "50px", "40px", "15px", "url(dog_03.png)");
+    const dog04 = new KissableDog("240px", "100px", "40px", "15px", "url(dog_04.png)");
+    const dog05 = new KissableDog("200px", "60px", "30px", "15px", "url(dog_05.png)");
+    const dog06 = new KissableDog("225px", "60px", "30px", "10px", "url(dog_06.png)");
+    const dog07 = new KissableDog("180px", "100px", "35px", "15px", "url(dog_07.png)");
+    const dog08 = new KissableDog("160px", "60px", "30px", "10px", "url(dog_08.png)");
+    const dog09 = new KissableDog("140px", "50px", "35px", "15px", "url(dog_09.png)");
+    const dog10 = new KissableDog("165px", "110px", "40px", "15px", "url(dog_10.png)");
+    const dog11 = new KissableDog("215px", "45px", "25px", "10px", "url(dog_11.png)");
+    const dog12 = new KissableDog("145px", "70px", "40px", "15px", "url(dog_12.png)");
+    const dog13 = new KissableDog("145px", "40px", "40px", "15px", "url(dog_13.png)");
+    const dog14 = new KissableDog("120px", "45px", "40px", "15px", "url(dog_14.png)");
+    const dog15 = new KissableDog("150px", "70px", "40px", "15px", "url(dog_15.png)");
+    const dog16 = new KissableDog("160px", "65px", "40px", "15px", "url(dog_16.png)");
+    const dog17 = new KissableDog("120px", "80px", "30px", "15px", "url(dog_17.png)");
+    const dog18 = new KissableDog("135px", "50px", "40px", "20px", "url(dog_18.png)");
+    const dog19 = new KissableDog("100px", "45px", "35px", "20px", "url(dog_19.png)");
+    const dog20 = new KissableDog("115px", "65px", "35px", "20px", "url(dog_20.png)");
+    const dog21 = new KissableDog("225px", "45px", "35px", "20px", "url(dog_21.png)");
+    const dog22 = new KissableDog("75px", "50px", "30px", "20px", "url(dog_22.png)");
+    const dog23 = new KissableDog("175px", "40px", "35px", "20px", "url(dog_23.png)");
+    const dog24 = new KissableDog("135px", "45px", "35px", "20px", "url(dog_24.png)");
+    const dog25 = new KissableDog("170px", "85px", "35px", "20px", "url(dog_25.png)");
 
-  <script type="text/javascript">
-    (function(window, document){
-      // This is how you tell the parent window that the CAPTCHA was successful.
-      function captchaSuccess() {
-        window.top.postMessage("success", '*');
+    let kissableDogs = [dog01, dog02, dog03, dog04, dog05, dog06, dog07, dog08, dog09, dog10, dog11, dog12, dog13, dog14, dog15, dog16, dog17, dog18, dog19, dog20, dog21, dog22, dog23, dog24, dog25];
+
+    // Adjust the total amount of times you have to succesfully kiss your dog (if you kiss your dog)
+    let totalDogKissRequirement = 24;
+
+    // Lower this value to make the kisses more succesful; Raise this value to make kisses more difficult to succeed (to progress to next image)
+    let kissSuccessCeiling = 15;
+
+    let kissSuccessBaseValue = 1;
+    let kissSuccessChance = kissSuccessBaseValue;
+    let totalKissesGiven = 0;
+    let currentDogIndex = 0;
+    let captchaContainer  = document.getElementById("captcha-container");
+    let title = document.getElementById("title");
+    let kissZone = document.getElementById("captcha-kiss-zone");
+    let kisses = [];
+    let kissed = false;
+
+    loadDogToKiss(kissableDogs[currentDogIndex]);
+    
+    function loadDogToKiss(dog){
+        setKissTitleText();
+        kissZone.style.marginLeft = dog.kissZoneXCoordinate;
+        kissZone.style.marginTop = dog.kissZoneYCoordinate;
+        kissZone.style.width = dog.kissZoneWidth;
+        kissZone.style.height = dog.kissZoneHeight;
+        captchaContainer.style.backgroundImage = dog.backgroundImage;
+        kissableDogs.splice(currentDogIndex, 1);
+        clearKisses();
+    }
+
+    function clearKisses(){
+        let timer = setTimeout(() => {
+                            kisses.forEach(element => {
+            element.remove();
+            });
+            }, 50);
+    }
+    
+    function setKissTitleText(){
+        title.innerText = "KISS YOUR DOG: " + totalKissesGiven + "/" + totalDogKissRequirement;
+    }
+
+    function getRandomInteger(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function kissTheDog(){
+      let kissRNG = getRandomInteger(1, kissSuccessCeiling);
+
+      if (kissRNG <= kissSuccessChance && kissed == false){
+        kissed = true;
+        kissSuccessChance = kissSuccessBaseValue;
+        console.log("success: " + kissSuccessChance)
+            if (totalKissesGiven < totalDogKissRequirement){
+            let timer = setTimeout(() => {
+                totalKissesGiven = totalKissesGiven + 1;
+                setKissTitleText();
+                if (totalKissesGiven > 1){
+                currentDogIndex = Math.floor(Math.random() * kissableDogs.length);
+                loadDogToKiss(kissableDogs[currentDogIndex]);
+                }
+                else{
+                currentDogIndex = totalKissesGiven;
+                loadDogToKiss(kissableDogs[currentDogIndex]);
+                }
+                kissed = false;
+            }, 1000);
+            }
       }
+      else {
+        // Increase the chance of a successful kiss
+        kissSuccessChance += 1;
+      }
+    }
 
-      // Your CAPTCHA code goes here, we've added a simple example below:
-      document.getElementById('solve')
-           .addEventListener('click', () => captchaSuccess());
+    (function(window, document){
+        setCursorToLips();
+        
+        function setCursorToLips() {
+            captchaContainer.classList.remove('custom-cursor-kiss-pucker');
+            captchaContainer.classList.add('custom-cursor-kiss-mark');
+        }
 
+        function setCursorToPucker() {
+            captchaContainer.classList.remove('custom-cursor-kiss-mark');
+            captchaContainer.classList.add('custom-cursor-kiss-pucker');
+        }
+
+        function captchaSuccess() {
+            if (totalKissesGiven >= totalDogKissRequirement){
+                window.top.postMessage("success", '*');
+            }
+        }
+
+        const pucker =  (event) => {
+            if (totalKissesGiven >= totalDogKissRequirement){
+                captchaSuccess();
+            }
+            setCursorToPucker()
+        
+        let x = event.clientX - 25;
+        let y = event.clientY - 20;
+        coordinatesXString = x + "px"
+        coordinatesYString = y + "px"
+
+        const newImage = document.createElement('img');
+            newImage.src = 'kiss_mark_small.png';
+            newImage.style.width = '50px';
+            newImage.style.position = 'absolute';
+            newImage.style.marginLeft = coordinatesXString;
+            newImage.style.marginTop = coordinatesYString;
+            newImage.style.userSelect = "none";
+            newImage.style.pointerEvents = "none";
+            kisses.push(newImage);
+            captchaContainer.appendChild(newImage);
+
+        let timer = setTimeout(() => {
+            setCursorToLips()
+            }, 250);
+        }
+        
+      document.addEventListener('click', pucker)
     })(window, document);
-  </script>
+</script>
 </body>
 </html>
