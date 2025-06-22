@@ -110,19 +110,20 @@
     const dog25 = new KissableDog("170px", "85px", "35px", "20px", "url(dog_25.png)");
     const dog26 = new KissableDog("210px", "55px", "35px", "20px", "url(dog_26.png)");
     const dog27 = new KissableDog("170px", "95px", "30px", "15px", "url(dog_27.png)");
-    const dog28 = new KissableDog("90px", "65px", "35px", "25px", "url(dog_28.png)");
+    const dog28 = new KissableDog("85px", "55px", "35px", "25px", "url(dog_28.png)");
     const dog29 = new KissableDog("272px", "65px", "40px", "25px", "url(dog_29.png)");
     const dog30 = new KissableDog("40px", "35px", "25px", "10px", "url(dog_30.png)");
+    const dog31 = new KissableDog("145px", "75px", "60px", "35px", "url(dog_31.png)");
 
     let kissableDogs = [dog01, dog02, dog03, dog04, dog05, dog06, dog07, dog08, dog09, dog10,
     dog11, dog12, dog13, dog14, dog15, dog16, dog17, dog18, dog19, dog20, dog21, dog22, dog23,
-    dog24, dog25, dog26, dog27, dog28, dog29, dog30];
+    dog24, dog25, dog26, dog27, dog28, dog29, dog30, dog31];
 
     // Adjusts the total amount of times you have to succesfully kiss your dog (if you kiss your dog)
     let totalDogKissRequirement = 30;
 
     // Lower this value to make the kisses more succesful; Raise this value to make kisses more difficult to succeed (to progress to next image)
-    let kissSuccessCeiling = 18;
+    let kissSuccessCeiling = 100;
 
     let kissSuccessBaseValue = 1;
     let kissSuccessChance = kissSuccessBaseValue;
