@@ -43,7 +43,7 @@
             width: 50px;
             height: 50px;
             padding: 8px;
-            /* background color to display the kiss zone*/
+            /* background color to display the kiss zone */
             /* background-color: rgba(0, 255, 255, 0.329); */
         }
 
@@ -108,14 +108,21 @@
     const dog23 = new KissableDog("175px", "40px", "35px", "20px", "url(dog_23.png)");
     const dog24 = new KissableDog("135px", "45px", "35px", "20px", "url(dog_24.png)");
     const dog25 = new KissableDog("170px", "85px", "35px", "20px", "url(dog_25.png)");
+    const dog26 = new KissableDog("210px", "55px", "35px", "20px", "url(dog_26.png)");
+    const dog27 = new KissableDog("170px", "95px", "30px", "15px", "url(dog_27.png)");
+    const dog28 = new KissableDog("90px", "65px", "35px", "25px", "url(dog_28.png)");
+    const dog29 = new KissableDog("272px", "65px", "40px", "25px", "url(dog_29.png)");
+    const dog30 = new KissableDog("40px", "35px", "25px", "10px", "url(dog_30.png)");
 
-    let kissableDogs = [dog01, dog02, dog03, dog04, dog05, dog06, dog07, dog08, dog09, dog10, dog11, dog12, dog13, dog14, dog15, dog16, dog17, dog18, dog19, dog20, dog21, dog22, dog23, dog24, dog25];
+    let kissableDogs = [dog01, dog02, dog03, dog04, dog05, dog06, dog07, dog08, dog09, dog10,
+    dog11, dog12, dog13, dog14, dog15, dog16, dog17, dog18, dog19, dog20, dog21, dog22, dog23,
+    dog24, dog25, dog26, dog27, dog28, dog29, dog30];
 
-    // Adjust the total amount of times you have to succesfully kiss your dog (if you kiss your dog)
-    let totalDogKissRequirement = 24;
+    // Adjusts the total amount of times you have to succesfully kiss your dog (if you kiss your dog)
+    let totalDogKissRequirement = 30;
 
     // Lower this value to make the kisses more succesful; Raise this value to make kisses more difficult to succeed (to progress to next image)
-    let kissSuccessCeiling = 15;
+    let kissSuccessCeiling = 18;
 
     let kissSuccessBaseValue = 1;
     let kissSuccessChance = kissSuccessBaseValue;
