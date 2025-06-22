@@ -119,20 +119,31 @@
     const dog34 = new KissableDog("50px", "100px", "45px", "25px", "url(dog_34.png)");
     const dog35 = new KissableDog("80px", "40px", "35px", "15px", "url(dog_35.png)");
     const dog36 = new KissableDog("110px", "50px", "35px", "20px", "url(dog_36.png)");
+    const dog37 = new KissableDog("200px", "130px", "35px", "20px", "url(dog_37.png)");
+    const dog38 = new KissableDog("150px", "35px", "35px", "20px", "url(dog_38.png)");
+    const dog39 = new KissableDog("60px", "35px", "30px", "15px", "url(dog_39.png)");
+    const dog40 = new KissableDog("240px", "100px", "35px", "20px", "url(dog_40.png)");
+    const dog41 = new KissableDog("160px", "95px", "35px", "20px", "url(dog_41.png)");
+    const dog42 = new KissableDog("75px", "105px", "30px", "15px", "url(dog_42.png)");
+    const dog43 = new KissableDog("195px", "85px", "30px", "20px", "url(dog_43.png)");
+    const dog44 = new KissableDog("20px", "100px", "30px", "20px", "url(dog_44.png)");
 
     let kissableDogs = [dog01, dog02, dog03, dog04, dog05, dog06, dog07, dog08, dog09, dog10,
     dog11, dog12, dog13, dog14, dog15, dog16, dog17, dog18, dog19, dog20, dog21, dog22, dog23,
-    dog24, dog25, dog26, dog27, dog28, dog29, dog30, dog31, dog32, dog33, dog34, dog35, dog36];
+    dog24, dog25, dog26, dog27, dog28, dog29, dog30, dog31, dog32, dog33, dog34, dog35, dog36,
+    dog37, dog38, dog39, dog40, dog41, dog42, dog43, dog44];
 
     // Adjusts the total amount of times you have to succesfully kiss your dog (if you kiss your dog)
-    let totalDogKissRequirement = 35;
+    let totalDogKissRequirement = 43;
 
-    // Lower this value to make the kisses more succesful; Raise this value to make kisses more difficult to succeed (to progress to next image)
-    let kissSuccessCeiling = 100;
+    // Lower this value to make the kisses more likely to progress to the next picture
+    // Raise this value to make the kisses less likely to progress to the next picture
+    let kissSuccessCeiling = 150;
 
     let kissSuccessBaseValue = 1;
     let kissSuccessChance = kissSuccessBaseValue;
     let totalKissesGiven = 0;
+
     let currentDogIndex = 0;
 
     let captchaContainer  = document.getElementById("captcha-container");
