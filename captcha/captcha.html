@@ -155,13 +155,18 @@
     let totalDogsToKiss = 45;
 
     // Change the randomized kiss floor and ceiling for total kisses required to progress to next image
+    let kissRequirementFloor = 3;
     let kissRequirementCeiling = 12;
-    let kissRequirementFloor = 6;
 
     // Modifier is added to the required kisses for the next dog after each image progression
-    // Scaling is added to the modifier value after each image progression
+    // To remove scaling after each image progression set this value to 0
     let kissesRequiredModifier = 1;
+
+    // This value is added to the modifier after each image progression
     let kissesRequiredScaling = 1;
+
+    // Interval of scaling (i.e. after how many images to apply the scaling)
+    let scaleInterval = 2;
     
     // Toggle the Final Round of Kissing your Dog on / off
     let finalRoundActive = true;
@@ -184,6 +189,7 @@
     let kissableDogIndex = 0;
     let kissMarks = [];
     let kissed = false;
+    let currentScaleInterval = 1;
 
     let captchaContainer  = document.getElementById("captcha-container");
     let title = document.getElementById("title");
@@ -208,11 +214,24 @@
         captchaContainer.style.backgroundImage = dog.backgroundImage;
         kissableDogs.splice(currentDogIndex, 1);
         currentDog = dog;
-        currentDog.requiredKisses += kissesRequiredModifier;
-        kissesRequiredModifier += kissesRequiredScaling;
         currentDogKisses = 0;
+        applyKissRequirementScaling();
         clearDogKisses();
         setKissTitleText();
+    }
+
+    function applyKissRequirementScaling(){
+        if (kissesRequiredModifier >= 1){
+            currentDog.requiredKisses = getRandomInteger(kissRequirementFloor + kissesRequiredModifier, kissRequirementCeiling + kissesRequiredModifier);
+            
+            if (currentScaleInterval == scaleInterval) {
+                kissesRequiredModifier += kissesRequiredScaling;
+                currentScaleInterval = 1;
+            }
+            else {
+                currentScaleInterval += 1;
+            }
+        }
     }
 
     function clearDogKisses(){
