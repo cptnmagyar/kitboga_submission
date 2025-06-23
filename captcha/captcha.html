@@ -65,7 +65,7 @@
 
         #title {
             text-align: center;
-            font-size: 34px;
+            font-size: 28px;
             background: rgb(50 50 50 / 0.3);
             font-family: "DynaPuff", system-ui;
             font-weight: 400;
@@ -88,70 +88,80 @@
     // Kissable Dog class for storing the kiss zone coordinates, kiss zone size, and dog image
     // Uncomment the #captcha-kiss-zone's background-color in CSS to see the dog's kiss zone
     class KissableDog {
-        constructor(kissZoneXCoordinate, kissZoneYCoordinate, kissZoneWidth, kissZoneHeight, backgroundImage) {
+        constructor(kissZoneXCoordinate, kissZoneYCoordinate, kissZoneWidth, kissZoneHeight, backgroundImage, currentKisses, requiredKisses) {
             this.kissZoneXCoordinate = kissZoneXCoordinate;
             this.kissZoneYCoordinate = kissZoneYCoordinate;
             this.kissZoneWidth = kissZoneWidth;
             this.kissZoneHeight = kissZoneHeight;
             this.backgroundImage = backgroundImage;
+            this.currentKisses = currentKisses;
+            this.requiredKisses = requiredKisses;
         }
     }
 
-    const dog01 = new KissableDog("145px", "40px", "40px", "25px", "url(dog_01.png)");
-    const dog02 = new KissableDog("215px", "45px", "30px", "10px", "url(dog_02.png)");
-    const dog03 = new KissableDog("70px", "50px", "40px", "15px", "url(dog_03.png)");
-    const dog04 = new KissableDog("240px", "100px", "40px", "15px", "url(dog_04.png)");
-    const dog05 = new KissableDog("200px", "60px", "30px", "15px", "url(dog_05.png)");
-    const dog06 = new KissableDog("225px", "60px", "30px", "10px", "url(dog_06.png)");
-    const dog07 = new KissableDog("180px", "100px", "35px", "15px", "url(dog_07.png)");
-    const dog08 = new KissableDog("160px", "60px", "30px", "10px", "url(dog_08.png)");
-    const dog09 = new KissableDog("140px", "50px", "35px", "15px", "url(dog_09.png)");
-    const dog10 = new KissableDog("165px", "110px", "40px", "15px", "url(dog_10.png)");
-    const dog11 = new KissableDog("215px", "45px", "25px", "10px", "url(dog_11.png)");
-    const dog12 = new KissableDog("145px", "70px", "40px", "15px", "url(dog_12.png)");
-    const dog13 = new KissableDog("145px", "40px", "40px", "15px", "url(dog_13.png)");
-    const dog14 = new KissableDog("120px", "45px", "40px", "15px", "url(dog_14.png)");
-    const dog15 = new KissableDog("150px", "70px", "40px", "15px", "url(dog_15.png)");
-    const dog16 = new KissableDog("160px", "65px", "40px", "15px", "url(dog_16.png)");
-    const dog17 = new KissableDog("120px", "80px", "30px", "15px", "url(dog_17.png)");
-    const dog18 = new KissableDog("135px", "50px", "40px", "20px", "url(dog_18.png)");
-    const dog19 = new KissableDog("100px", "45px", "35px", "20px", "url(dog_19.png)");
-    const dog20 = new KissableDog("115px", "65px", "35px", "20px", "url(dog_20.png)");
-    const dog21 = new KissableDog("225px", "45px", "35px", "20px", "url(dog_21.png)");
-    const dog22 = new KissableDog("75px", "50px", "30px", "20px", "url(dog_22.png)");
-    const dog23 = new KissableDog("175px", "40px", "35px", "20px", "url(dog_23.png)");
-    const dog24 = new KissableDog("135px", "45px", "35px", "20px", "url(dog_24.png)");
-    const dog25 = new KissableDog("170px", "85px", "35px", "20px", "url(dog_25.png)");
-    const dog26 = new KissableDog("210px", "55px", "35px", "20px", "url(dog_26.png)");
-    const dog27 = new KissableDog("170px", "95px", "30px", "15px", "url(dog_27.png)");
-    const dog28 = new KissableDog("85px", "55px", "35px", "25px", "url(dog_28.png)");
-    const dog29 = new KissableDog("272px", "65px", "40px", "25px", "url(dog_29.png)");
-    const dog30 = new KissableDog("40px", "35px", "25px", "10px", "url(dog_30.png)");
-    const dog31 = new KissableDog("145px", "75px", "60px", "35px", "url(dog_31.png)");
-    const dog32 = new KissableDog("225px", "65px", "40px", "20px", "url(dog_32.png)");
-    const dog33 = new KissableDog("170px", "60px", "45px", "15px", "url(dog_33.png)");
-    const dog34 = new KissableDog("50px", "100px", "45px", "25px", "url(dog_34.png)");
-    const dog35 = new KissableDog("80px", "40px", "35px", "15px", "url(dog_35.png)");
-    const dog36 = new KissableDog("110px", "50px", "35px", "20px", "url(dog_36.png)");
-    const dog37 = new KissableDog("200px", "130px", "35px", "20px", "url(dog_37.png)");
-    const dog38 = new KissableDog("150px", "35px", "35px", "20px", "url(dog_38.png)");
-    const dog39 = new KissableDog("60px", "35px", "30px", "15px", "url(dog_39.png)");
-    const dog40 = new KissableDog("240px", "100px", "35px", "20px", "url(dog_40.png)");
-    const dog41 = new KissableDog("160px", "95px", "35px", "20px", "url(dog_41.png)");
-    const dog42 = new KissableDog("75px", "105px", "30px", "15px", "url(dog_42.png)");
-    const dog43 = new KissableDog("195px", "85px", "30px", "20px", "url(dog_43.png)");
-    const dog44 = new KissableDog("20px", "100px", "30px", "20px", "url(dog_44.png)");
+    const dog01 = new KissableDog("145px", "50px", "40px", "25px", "url(dog_01.png)", 0, 0);
+    const dog02 = new KissableDog("215px", "55px", "30px", "10px", "url(dog_02.png)", 0, 0);
+    const dog03 = new KissableDog("70px", "60px", "40px", "15px", "url(dog_03.png)", 0, 0);
+    const dog04 = new KissableDog("240px", "110px", "40px", "15px", "url(dog_04.png)", 0, 0);
+    const dog05 = new KissableDog("200px", "70px", "30px", "15px", "url(dog_05.png)", 0, 0);
+    const dog06 = new KissableDog("225px", "70px", "30px", "10px", "url(dog_06.png)", 0, 0);
+    const dog07 = new KissableDog("180px", "110px", "35px", "15px", "url(dog_07.png)", 0, 0);
+    const dog08 = new KissableDog("160px", "70px", "30px", "10px", "url(dog_08.png)", 0, 0);
+    const dog09 = new KissableDog("140px", "60px", "35px", "15px", "url(dog_09.png)", 0, 0);
+    const dog10 = new KissableDog("165px", "120px", "40px", "15px", "url(dog_10.png)", 0, 0);
+    const dog11 = new KissableDog("215px", "55px", "25px", "10px", "url(dog_11.png)", 0, 0);
+    const dog12 = new KissableDog("145px", "80px", "40px", "15px", "url(dog_12.png)", 0, 0);
+    const dog13 = new KissableDog("145px", "50px", "40px", "15px", "url(dog_13.png)", 0, 0);
+    const dog14 = new KissableDog("120px", "55px", "40px", "15px", "url(dog_14.png)", 0, 0);
+    const dog15 = new KissableDog("150px", "80px", "40px", "15px", "url(dog_15.png)", 0, 0);
+    const dog16 = new KissableDog("160px", "75px", "40px", "15px", "url(dog_16.png)", 0, 0);
+    const dog17 = new KissableDog("120px", "90px", "30px", "15px", "url(dog_17.png)", 0, 0);
+    const dog18 = new KissableDog("135px", "60px", "40px", "20px", "url(dog_18.png)", 0, 0);
+    const dog19 = new KissableDog("100px", "55px", "35px", "20px", "url(dog_19.png)", 0, 0);
+    const dog20 = new KissableDog("115px", "75px", "35px", "20px", "url(dog_20.png)", 0, 0);
+    const dog21 = new KissableDog("225px", "55px", "35px", "20px", "url(dog_21.png)", 0, 0);
+    const dog22 = new KissableDog("75px", "60px", "30px", "20px", "url(dog_22.png)", 0, 0);
+    const dog23 = new KissableDog("175px", "50px", "35px", "20px", "url(dog_23.png)", 0, 0);
+    const dog24 = new KissableDog("135px", "55px", "35px", "20px", "url(dog_24.png)", 0, 0);
+    const dog25 = new KissableDog("170px", "95px", "35px", "20px", "url(dog_25.png)", 0, 0);
+    const dog26 = new KissableDog("210px", "65px", "35px", "20px", "url(dog_26.png)", 0, 0);
+    const dog27 = new KissableDog("170px", "105px", "30px", "15px", "url(dog_27.png)", 0, 0);
+    const dog28 = new KissableDog("85px", "65px", "35px", "25px", "url(dog_28.png)", 0, 0);
+    const dog29 = new KissableDog("272px", "75px", "40px", "25px", "url(dog_29.png)", 0, 0);
+    const dog30 = new KissableDog("40px", "45px", "25px", "10px", "url(dog_30.png)", 0, 0);
+    const dog31 = new KissableDog("145px", "85px", "60px", "35px", "url(dog_31.png)", 0, 0);
+    const dog32 = new KissableDog("225px", "75px", "40px", "20px", "url(dog_32.png)", 0, 0);
+    const dog33 = new KissableDog("170px", "70px", "45px", "15px", "url(dog_33.png)", 0, 0);
+    const dog34 = new KissableDog("50px", "110px", "45px", "25px", "url(dog_34.png)", 0, 0);
+    const dog35 = new KissableDog("80px", "50px", "35px", "15px", "url(dog_35.png)", 0, 0);
+    const dog36 = new KissableDog("110px", "60px", "35px", "20px", "url(dog_36.png)", 0, 0);
+    const dog37 = new KissableDog("200px", "140px", "35px", "20px", "url(dog_37.png)", 0, 0);
+    const dog38 = new KissableDog("150px", "45px", "35px", "20px", "url(dog_38.png)", 0, 0);
+    const dog39 = new KissableDog("60px", "45px", "30px", "15px", "url(dog_39.png)", 0, 0);
+    const dog40 = new KissableDog("240px", "110px", "35px", "20px", "url(dog_40.png)", 0, 0);
+    const dog41 = new KissableDog("160px", "105px", "35px", "20px", "url(dog_41.png)", 0, 0);
+    const dog42 = new KissableDog("75px", "115px", "30px", "15px", "url(dog_42.png)", 0, 0);
+    const dog43 = new KissableDog("195px", "95px", "30px", "20px", "url(dog_43.png)", 0, 0);
+    const dog44 = new KissableDog("20px", "110px", "30px", "20px", "url(dog_44.png)", 0, 0);
+    const dog45 = new KissableDog("175px", "35px", "35px", "25px", "url(dog_45.png)", 0, 0);
+    const dog46 = new KissableDog("30px", "60px", "30px", "20px", "url(dog_46.png)", 0, 0);
 
     let kissableDogs = [dog01, dog02, dog03, dog04, dog05, dog06, dog07, dog08, dog09, dog10,
     dog11, dog12, dog13, dog14, dog15, dog16, dog17, dog18, dog19, dog20, dog21, dog22, dog23,
     dog24, dog25, dog26, dog27, dog28, dog29, dog30, dog31, dog32, dog33, dog34, dog35, dog36,
-    dog37, dog38, dog39, dog40, dog41, dog42, dog43, dog44];
+    dog37, dog38, dog39, dog40, dog41, dog42, dog43, dog44, dog45, dog46];
 
     // Adjusts the total amount of times you have to succesfully kiss your dog (if you kiss your dog)
-    let totalDogKissRequirement = 43;
+    let totalDogsToKiss = 45;
 
-    // Lower this value to make Kisses more likely to progress to the next picture
-    let kissSuccessCeiling = 125;
+    // Change the kiss floor, ceiling, and scaling for total kisses required per image
+    let kissRequirementCeiling = 15;
+    let kissRequirementFloor = 5;
+
+    // Modifier is added to the required kisses for the next dog after each image progression
+    // Scaling is added to the modifier value after each image progression
+    let kissesRequiredModifier = 1;
+    let kissesRequiredScaling = 2;
     
     // Toggle the Final Round of Kissing your Dog on / off
     let finalRoundActive = true;
@@ -168,10 +178,10 @@
     const maxPosition = 210;
 
     // Standard Dog Values
-    let kissSuccessBaseValue = 1;
-    let kissSuccessChance = kissSuccessBaseValue;
-    let totalSuccessfulKisses = 0;
+    let currentDog;
     let currentDogIndex = 0;
+    let currentDogKisses = 0;
+    let kissableDogIndex = 0;
     let kissMarks = [];
     let kissed = false;
 
@@ -180,19 +190,29 @@
     let kissZone = document.getElementById("captcha-kiss-zone");
     let finalRoundDog = document.getElementById("final-round-dog-kiss");
 
-
     // Loads initial dog to kiss
+    initializeKissesRequired();
     loadDogToKiss(kissableDogs[currentDogIndex]);
     
+    function initializeKissesRequired(){
+        kissableDogs.forEach(element => {
+            element.requiredKisses = getRandomInteger(kissRequirementFloor, kissRequirementCeiling);
+        });
+    }
+    
     function loadDogToKiss(dog){
-        setKissTitleText();
         kissZone.style.marginLeft = dog.kissZoneXCoordinate;
         kissZone.style.marginTop = dog.kissZoneYCoordinate;
         kissZone.style.width = dog.kissZoneWidth;
         kissZone.style.height = dog.kissZoneHeight;
         captchaContainer.style.backgroundImage = dog.backgroundImage;
         kissableDogs.splice(currentDogIndex, 1);
+        currentDog = dog;
+        currentDog.requiredKisses += kissesRequiredModifier;
+        kissesRequiredModifier += kissesRequiredScaling;
+        currentDogKisses = 0;
         clearDogKisses();
+        setKissTitleText();
     }
 
     function clearDogKisses(){
@@ -208,7 +228,7 @@
             title.innerText = "FINAL ROUND: KISS!!!";
         }
         else  {
-            title.innerText = "KISS YOUR DOG: " + totalSuccessfulKisses + "/" + totalDogKissRequirement;
+            title.innerText = "KISS YOUR DOG: " + currentDogKisses + "/" + currentDog.requiredKisses;
         }
     }
 
@@ -219,21 +239,22 @@
     }
 
     function kissTheDog(){
-      let kissRNG = getRandomInteger(1, kissSuccessCeiling);
-
-      if (kissRNG <= kissSuccessChance && kissed == false){
+        
+        if (kissed == false){
+            currentDogKisses += 1;
+        }
+    
+        if (currentDogKisses >= currentDog.requiredKisses && kissed == false){
             kissed = true;
-            kissSuccessChance = kissSuccessBaseValue;
-            if (totalSuccessfulKisses < totalDogKissRequirement){
+            if (kissableDogIndex < totalDogsToKiss){
                 let timer = setTimeout(() => {
-                    totalSuccessfulKisses = totalSuccessfulKisses + 1;
-                    setKissTitleText();
-                    if (totalSuccessfulKisses > 1 && totalSuccessfulKisses < totalDogKissRequirement){
+                    kissableDogIndex = kissableDogIndex + 1;
+                    if (kissableDogIndex > 1 && kissableDogIndex < totalDogsToKiss){
                     currentDogIndex = Math.floor(Math.random() * kissableDogs.length);
                     loadDogToKiss(kissableDogs[currentDogIndex]);
                     }
-                    else if (totalSuccessfulKisses <= 1) {
-                    currentDogIndex = totalSuccessfulKisses;
+                    else if (kissableDogIndex <= 1) {
+                    currentDogIndex = kissableDogIndex;
                     loadDogToKiss(kissableDogs[currentDogIndex]);
                     }
                     kissed = false;
@@ -241,9 +262,8 @@
             }
       }
       else {
-        // If kiss fails than increase the success chance of the next kiss
-        kissSuccessChance += 1;
       }
+      setKissTitleText();
     }
 
     function finalKissTheDog(){
@@ -268,7 +288,7 @@
                 window.top.postMessage("success", '*');
             }
             
-            if (totalSuccessfulKisses >= totalDogKissRequirement && finalRoundActive == false){
+            if (kissableDogIndex >= totalDogsToKiss && finalRoundActive == false){
                 window.top.postMessage("success", '*');
             }
         }
@@ -300,7 +320,7 @@
         const kissYourDog =  (event) => {
             setCursorToPucker()
 
-            if (totalSuccessfulKisses >= totalDogKissRequirement){
+            if (kissableDogIndex >= totalDogsToKiss){
                 if (finalRoundActive == true && finalRoundStarted == false){
                     startFinalRound();
                 }
