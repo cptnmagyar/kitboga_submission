@@ -154,20 +154,20 @@
     // Adjusts the total amount of times you have to succesfully kiss your dog (if you kiss your dog)
     // This value should be less than the amount of KissableDogs in the kissableDogs array
     const totalDogsToKiss = 45;
-    
+
     // Change the randomized kiss floor and ceiling for total kisses required to progress to next image
-    let kissRequirementFloor = 3;
-    let kissRequirementCeiling = 12;
+    let kissRequirementFloor = 4;
+    let kissRequirementCeiling = 16;
 
     // Modifier is added to the required kisses for the next dog after each image progression
     // To remove scaling after each image progression set this value to 0
-    let kissesRequiredModifier = 1;
+    let kissesRequiredModifier = 3;
 
     // This value is added to the modifier after each image progression
     let kissesRequiredScaling = 1;
 
     // Interval of scaling (i.e. after how many images to apply the scaling)
-    let scaleInterval = 2;
+    let scaleInterval = 3;
     
     // Toggle the Final Round of Kissing your Dog on / off
     let finalRoundActive = true;
@@ -269,11 +269,11 @@
             if (kissableDogIndex < totalDogsToKiss){
                 let timer = setTimeout(() => {
                     kissableDogIndex = kissableDogIndex + 1;
-                    if (kissableDogIndex > 1 && kissableDogIndex < totalDogsToKiss){
+                    if (kissableDogIndex > 3 && kissableDogIndex < totalDogsToKiss){
                     currentDogIndex = Math.floor(Math.random() * kissableDogs.length);
                     loadDogToKiss(kissableDogs[currentDogIndex]);
                     }
-                    else if (kissableDogIndex <= 1) {
+                    else {
                     currentDogIndex = kissableDogIndex;
                     loadDogToKiss(kissableDogs[currentDogIndex]);
                     }
